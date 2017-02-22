@@ -1,0 +1,19 @@
+{
+    "name": "thorongil/synology-pushbullet",
+    "description": "Synology SMS Provider wrapper for Surveillance Station",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Erik Beijerman",
+            "email": "erik@thorongil.com"
+        }
+    ],
+    "require": {
+	"guzzlehttp/guzzle": "~6.0",
+        "vlucas/phpdotenv": "^2.2"
+    },
+    "autoload": {
+        "psr-4": {"Thorongil\\": "src/"}
+    }
+
+}
