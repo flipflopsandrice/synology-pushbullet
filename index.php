@@ -1,15 +1,15 @@
 <?php
 
-require_once(__DIR__.'/vendor/autoload.php');
+require_once(__DIR__ . '/vendor/autoload.php');
 
 /**
  * Load environment variables
  */
 try {
-  (new Dotenv\Dotenv(__DIR__))->load();
+    (new Dotenv\Dotenv(__DIR__))->load();
 } catch (Exception $e) {
-  header('HTTP/1.0 500 Internal Server Error');
-  exit('Invalid or missing .env file');
+    header('HTTP/1.0 500 Internal Server Error');
+    exit('Invalid or missing .env file');
 }
 
 /**
@@ -18,11 +18,11 @@ try {
 $ips = explode(',', getenv('ALLOWED_IPS'));
 $ip  = $_SERVER['REMOTE_ADDR'];
 if (
-  !empty($ips) && 
-  !in_array($ip, $ips)
+    !empty($ips) &&
+    !in_array($ip, $ips)
 ) {
-  header('HTTP/1.0 403 Forbidden');
-  exit();
+    header('HTTP/1.0 403 Forbidden');
+    exit();
 }
 
 /**
@@ -35,6 +35,6 @@ $guzzle = new GuzzleHttp\Client();
  */
 $api = new Thorongil\Pushbullet\Client($guzzle, getenv('API_KEY'));
 $api->push(
-  getenv('MSG_TITLE'),
-  getenv('MSG_TEXT')
+    getenv('MSG_TITLE'),
+    getenv('MSG_TEXT')
 );
