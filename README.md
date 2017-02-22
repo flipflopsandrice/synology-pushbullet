@@ -1,6 +1,6 @@
 # Synology Pushbullet
 
-Synology SMS Provider wrapper for Surveillance Station
+Pushbullet SMS Provider wrapper for Synology Surveillance Station
 
 ## Installation
 

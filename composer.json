@@ -1,6 +1,6 @@
 {
     "name": "thorongil/synology-pushbullet",
-    "description": "Synology SMS Provider wrapper for Surveillance Station",
+    "description": "Pushbullet SMS Provider wrapper for Synology Surveillance Station",
     "license": "MIT",
     "authors": [
         {
